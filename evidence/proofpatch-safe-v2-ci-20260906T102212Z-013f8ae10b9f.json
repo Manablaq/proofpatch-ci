@@ -1,0 +1,20 @@
+{
+  "candidate_sha256": "013f8ae10b9f38aaad7689168b94335a514a9c30882f4a03daa3eb546cda83ea",
+  "checks": {
+    "adversarial_tests": true,
+    "direct_tests": true,
+    "genvm_lint": true,
+    "proofpatch_interface_tests": true,
+    "schema": true,
+    "typecheck": true
+  },
+  "evidence_id": "proofpatch-safe-v2-ci-20260906T102212Z-013f8ae10b9f",
+  "expires_at": 1788776532,
+  "issuer": "Manablaq/proofpatch-ci",
+  "kind": "ci",
+  "parent_sha256": "7607cce754d8f7905eed629b0e8af0f3ce51bd405b3b4ba9db19e5d831209f19",
+  "policy_fingerprint": "0f30dea3a111d4d6ba13b68bb667338618c963ea5258049303a2492be73fc1ab",
+  "published_at": 1788690132,
+  "schema": "proofpatch-evidence-v1",
+  "target": "0xe7165dEA0F712E3161ADa773c41755d79F1e696B"
+}
