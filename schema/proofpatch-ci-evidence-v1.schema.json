@@ -1,0 +1,93 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:proofpatch:ci-evidence:v1",
+  "title": "ProofPatch CI Evidence v1",
+  "description": "Machine-readable CI evidence envelope for ProofPatch consensus-gated GenLayer upgrade proposals.",
+  "type": "object",
+  "required": [
+    "schema",
+    "kind",
+    "evidence_id",
+    "issuer",
+    "target",
+    "parent_sha256",
+    "candidate_sha256",
+    "policy_fingerprint",
+    "published_at",
+    "expires_at",
+    "checks"
+  ],
+  "properties": {
+    "schema": {
+      "const": "proofpatch-evidence-v1"
+    },
+    "kind": {
+      "const": "ci"
+    },
+    "evidence_id": {
+      "type": "string",
+      "minLength": 8,
+      "maxLength": 160
+    },
+    "issuer": {
+      "const": "Manablaq/proofpatch-ci"
+    },
+    "target": {
+      "type": "string",
+      "pattern": "^0x[0-9a-fA-F]{40}$"
+    },
+    "parent_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "candidate_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "policy_fingerprint": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "published_at": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "expires_at": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "checks": {
+      "type": "object",
+      "required": [
+        "genvm_lint",
+        "typecheck",
+        "schema",
+        "direct_tests",
+        "adversarial_tests",
+        "proofpatch_interface_tests"
+      ],
+      "properties": {
+        "genvm_lint": {
+          "const": true
+        },
+        "typecheck": {
+          "const": true
+        },
+        "schema": {
+          "const": true
+        },
+        "direct_tests": {
+          "const": true
+        },
+        "adversarial_tests": {
+          "const": true
+        },
+        "proofpatch_interface_tests": {
+          "const": true
+        }
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}
